@@ -209,7 +209,11 @@ Title是@(ViewBag.Title)<br />
 <br />
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 
-
+@using System.Text.RegularExpressions;
+@{
+    string rgx_pattern = "";
+    var match = Regex.Match("zzz", rgx_pattern);
+}
 
 <br />
 <!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->

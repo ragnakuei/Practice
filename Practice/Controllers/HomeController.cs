@@ -33,6 +33,21 @@ namespace Practice.Controllers
             return View();
         }
 
+        public ActionResult helper()
+        {
+            return View();
+        }
+
+        public ActionResult helper01()
+        {
+            return View();
+        }
+
+        public ActionResult function()
+        {
+            return View();
+        }
+
         [HttpPost]
         public ActionResult Post()
         {

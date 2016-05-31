@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using Practice.Models;
 using Practice.Models.DAL;
@@ -18,6 +14,7 @@ namespace Practice.Controllers
         // GET: Books
         public ActionResult Index()
         {
+            ViewBag.Title = "Index";
             return View(db.Books.ToList());
         }
 
@@ -33,12 +30,14 @@ namespace Practice.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Title = "Details";
             return View(book);
         }
 
         // GET: Books/Create
         public ActionResult Create()
         {
+            ViewBag.Title = "Create";
             return View();
         }
 
@@ -55,7 +54,7 @@ namespace Practice.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            ViewBag.Title = "Create";
             return View(book);
         }
 
@@ -71,6 +70,7 @@ namespace Practice.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Title = "Edit";
             return View(book);
         }
 
@@ -87,6 +87,7 @@ namespace Practice.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.Title = "Edit";
             return View(book);
         }
 
@@ -102,6 +103,7 @@ namespace Practice.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Title = "Delete";
             return View(book);
         }
 
