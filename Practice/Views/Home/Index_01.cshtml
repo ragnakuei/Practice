@@ -1,0 +1,18 @@
+﻿@section script{
+    <!--這是section script-->
+    Index_01 script<br />
+}
+
+<!--這是section body-->
+Index_01 body<br />
+@{
+    Layout = "~/Views/Shared/_Layout_01.cshtml";
+}
+
+@{
+    @RenderPage("RenderPage.cshtml", new { key1 = "value1", key2 = "value2" });
+}
+@section footer{
+    <!--這是section footer-->    
+    Index_01 footer<br />
+}

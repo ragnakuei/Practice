@@ -1,0 +1,29 @@
+﻿@section script{
+    <!--這是section script-->
+    Index_01 script<br />
+}
+
+<!--這是section body-->
+Index_01 body<br />
+@{
+    Layout = "~/Views/Shared/_Layout_01.cshtml";
+}
+<text style="color:blue">以下是@Html.Partial</text><br />
+@Html.Partial("_Partial_02")<br />
+
+--------------------------------------------------------------<br />
+<text style="color:blue">以下是@Html.Action</text><br />
+@Html.Action("_Partial_02")<br />
+@{
+    @Html.Action("_Partial_02");<br />
+}
+
+--------------------------------------------------------------<br />
+<text style="color:blue">以下是@Html.RenderPartial</text><br />
+@{ Html.RenderPartial("_Partial_02"); }<br />
+--------------------------------------------------------------<br />
+
+@section footer{
+    <!--這是section footer-->    
+    Index_01 footer<br />
+}

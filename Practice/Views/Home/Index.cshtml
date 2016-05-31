@@ -1,0 +1,227 @@
+﻿
+@{ String Message = "Hello World"; }
+<p>The value of Message is: @Message</p>
+
+<!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+
+@*@{
+        string name = "Tom";
+        int age = 18;
+    }
+    <p>@name is @age years old.</p>*@
+
+@{
+    string name = "Tom";
+    int age = 18;
+    <p>@name is @age years old.</p>
+}
+
+<!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+
+@{ var myFilePath = @"C:\MyFolder\"; }
+<p>The path is: @myFilePath</p>
+
+<!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+
+@{
+    bool bln = true;
+    if (bln)
+    { <p>@bln</p>  }
+    else
+    { <p>@bln</p>  }
+}
+
+@*@{ bool bln = true; }
+    @if (bln)
+    { <p>@bln</p>  }
+    else
+    { <p>@bln</p>  }*@
+
+<!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+
+@{ var myQuote = @"This is ""double quotation""."; }
+<p>@myQuote</p>
+
+<!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+
+@@name is @name
+<p>@@name is @name</p>
+@{ <p>@@name is @name</p> }
+
+<!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+
+<br />
+<a href="mailto:test@example.com">test@example.com</a>
+<br />
+@{ string name_email = "test@example.com";}
+<a href="mailto:@name_email">@name_email</a>
+<br />
+
+<!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+
+@*@if (true)
+    {
+        @:true
+    }
+    else
+    {
+        @:false
+    }*@
+<br />
+@if (true)
+{ @(true)  }
+else
+{ @(false) }
+<br />
+
+<!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+
+@{
+    string[] names = { "Mary", "Tom" };
+    for (int i = 0; i < names.Length; i++)
+    {
+        <text>
+            Hi~ @names[i]<br />
+            您好~!!<br />
+        </text>
+    }
+}
+
+<!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+
+<br />
+@{
+    for (int i = 0; i < names.Length; i++)
+    {
+        <span>
+            Hi~ <span style="color:blue">@names[i]</span><br />
+            您好~!!<br />
+        </span>
+    }
+}
+
+<!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+
+@*單行註解*@
+
+@*
+    多行註解
+    多行註解
+*@
+
+@{
+    //這是註解
+    string a = "a";
+
+    /*
+     這是註解
+     */
+}
+
+
+@{
+    <!-- 註解-->
+}
+
+<!-- 註解-->
+
+<br />
+<!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+
+Title是@ViewBag.Title<br />
+Title：@ViewBag.Title<br />
+Title是@(ViewBag.Title)<br />
+<br />
+<!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+@{
+    var a1 = 1;
+    <p>@(a1 + 1)</p>    
+}
+<br />
+<!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+
+<text>int：@(int.MinValue)~@(int.MaxValue)</text><br />
+<text>float：@(float.MinValue)~@(float.MaxValue)</text><br />
+<text>decimal：@(decimal.MinValue)~@(decimal.MaxValue)</text><br />
+<text>DateTime：@(DateTime.MinValue)~@(DateTime.MaxValue.ToString("yyyy/MM/dd"))</text><br />
+<br />
+<!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+
+@if(true && true)
+{ <text>true</text><br /> }
+
+@if (true || false)
+{ <text>true</text><br /> }
+<br />
+<!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+
+<text>~\：@Server.MapPath("~\\")</text><br />
+<text>~/：@Server.MapPath("~/")</text><br />
+<text>~：@Server.MapPath("~")</text><br />
+<text>.：@Server.MapPath(".")</text><br />
+<a href="~/Home/">Home</a><br />
+<br />
+<!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+
+@@Request.ApplicationPath:@Request.ApplicationPath<br />
+@@Request.PhysicalPath:@Request.PhysicalPath<br />
+@@Request.FilePath:@Request.FilePath<br />
+@@Request.Url:@Request.Url<br />
+
+@@Request.Url.Scheme:@Request.Url.Scheme<br />
+@@Request.Url.Host:@Request.Url.Host<br />
+@@Request.Url.Port:@Request.Url.Port<br />
+@@Request.Url.Authority:@Request.Url.Authority<br />
+@@Request.Url.LocalPath:@Request.Url.LocalPath<br />
+@@Request.PathInfo:@Request.PathInfo<br />
+@@Request.Url.PathAndQuery:@Request.Url.PathAndQuery<br />
+@@Request.Url.Query:@Request.Url.Query<br />
+@@Request.Url.Fragment:@Request.Url.Fragment<br />
+@@Request.Url.Segments:@Request.Url.Segments<br />
+@@Request.MapPath(/home):@Request.MapPath("/home","/",true)<br />
+
+<br />
+<!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+
+@using (Html.BeginForm("Post", "Home", FormMethod.Post))
+{
+    @Html.TextBox("a", "")<br />
+    <button type="submit">Post</button><br />
+}
+@using (Html.BeginForm("Get", "Home", FormMethod.Get))
+{
+    @Html.TextBox("b", "")<br />
+        <button type="submit">Get</button><br />
+}
+<br />
+<!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+
+@{
+    // Pass parameters to a method using named parameters.
+    var myPathNamed = Request.MapPath(
+            baseVirtualDir: "/",
+            allowCrossAppMapping: true, 
+            virtualPath: "/scripts"
+            );
+}
+<p>@myPathNamed</p>
+
+<br />
+<!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+
+
+
+<br />
+<!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+
+<br />
+<!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+
+<br />
+<!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+
+<br />
+<!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+
+<br />
+<!--xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->

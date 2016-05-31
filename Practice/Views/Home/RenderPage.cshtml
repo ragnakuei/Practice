@@ -1,0 +1,27 @@
+﻿@section script{
+    <!--這是section script-->
+    RenderPage script<br />
+}
+
+<!--這是section body-->
+RenderPage body<br />
+@{
+    Layout = "~/Views/Shared/_Layout_01.cshtml";
+}
+@if(PageData["key1"] != null)
+{
+      <text>PageData["key1"]：@PageData["key1"]</text><br />
+}
+@if (PageData["key2"] != null)
+{
+    <text>PageData["key2"]：@PageData["key2"]</text><br />
+}
+@if (PageData["key3"] != null)
+{
+    <text>PageData["key3"]：@PageData["key3"]</text><br />
+}
+
+@section footer{
+    <!--這是section footer-->
+    RenderPage footer<br />
+}

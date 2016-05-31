@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Post";
+    var a = Request["a"];
+}
+
+<h2>Post</h2>
+<p>@a</p>
+
+@if (a.IsBool())
+{ @Html.Label("a", "Bool:" + a.AsBool().ToString());<br />  }
+else if (a.IsInt())
+{ @Html.Label("a", "Int:" + a.AsInt().ToString());<br />  }
+else if (a.IsFloat())
+{ @Html.Label("a","float:" + a.AsFloat().ToString());<br />  }
+else if (a.IsDecimal())
+{ @Html.Label("a", "Decimal:" + a.AsDecimal().ToString());<br />  }
+else if (a.IsDateTime())
+{ @Html.Label("a", "datetime:" + a.AsDateTime().ToString());<br />  }
+else
+{ @Html.Label("a", "String:" + a);<br />  }
+
+
