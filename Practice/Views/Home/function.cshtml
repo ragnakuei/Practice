@@ -1,1 +1,14 @@
-﻿
+﻿@*@functions{
+    public IHtmlString now()
+    {
+        return new HtmlString("今天是：" + DateTime.Now.ToString("yyyy/MM/dd"));
+    }
+
+    public string now_str()
+    {
+        return "今天是：" + DateTime.Now.ToString("yyyy/MM/dd");
+    }
+}*@
+
+@now.now01()<br />
+@now.now_str()<br>
