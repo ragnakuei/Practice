@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using Practice.Models.DAL;
+using System.Data.Entity;
 using System.Web.Mvc;
 using System.Web.Routing;
 
@@ -11,6 +9,7 @@ namespace Practice
     {
         protected void Application_Start()
         {
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<MovieContext>());
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }

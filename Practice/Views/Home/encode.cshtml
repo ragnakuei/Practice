@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "encode";
+}
+
+@{ 
+    var htmlstring = "<script>alert('Raise alert2');</script>";
+}
+
+@htmlstring<br />
+
+@Html.Encode(htmlstring)<br />

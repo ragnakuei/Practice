@@ -1,0 +1,23 @@
+﻿@section script{
+    <!--這是section script-->
+    Index_03 script<br />
+}
+
+<!--這是section body-->
+Index_03 body<br />
+@{
+    Layout = "~/Views/Shared/_Layout_01.cshtml";
+}
+<text style="color:blue">以下是@Html.Action</text><br />
+@*@{ MvcHtmlString mhs = @Html.Action("Index", "Books"); }*@
+@Html.Action("Details","Books",new { id = 2 })<br />
+
+--------------------------------------------------------------<br />
+<text style="color:blue">以下是@Html.RenderAction</text><br />
+@{Html.RenderAction("Details", "Books", new { id = 2 });}<br />
+--------------------------------------------------------------<br />
+
+@section footer{
+    <!--這是section footer-->    
+    Index_03 footer<br />
+}

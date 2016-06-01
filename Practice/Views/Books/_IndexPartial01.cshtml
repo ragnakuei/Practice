@@ -1,0 +1,10 @@
+﻿@model string[]
+
+@ViewData["Title"]<br />
+
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>@Html.Label(item)</li>
+    }
+</ul>

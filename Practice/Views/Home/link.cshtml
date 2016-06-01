@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "link";
+}
+
+<style>
+    .link_red{
+        color:red;
+    }
+</style>
+
+<h2>link</h2>
+
+@Html.ActionLink("Book Detail","Details","Books","http","localhost",null,new { id = 2 },new { @class = "link_red"})<br />
+
+@Html.RouteLink(
+    "Movie Detail"
+    , "Default"
+    , "http"
+    , "localhost"
+    , null
+    , new { controller = "Movies", action = "Details",id = 2 }
+    , new { @class = "link_red" }
+)
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+}
+

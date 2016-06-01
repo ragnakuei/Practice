@@ -33,7 +33,36 @@ namespace Practice.Controllers
             return View();
         }
 
+        public ActionResult Index_03()
+        {
+            ViewBag.Title = "Index";
+            return View();
+        }
+
+        public ActionResult Index_04()
+        {
+            ViewBag.Title = "Index";
+            ViewData["Title"] = "Index04";
+            return View();
+        }
+
         public ActionResult helper()
+        {
+            return View();
+        }
+
+        [ValidateAntiForgeryToken]
+        public ActionResult link()
+        {
+            return View();
+        }
+
+        public ActionResult encode()
+        {
+            return View();
+        }
+
+        public ActionResult raw()
         {
             return View();
         }

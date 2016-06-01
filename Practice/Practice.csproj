@@ -161,19 +161,19 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\DAL\BookContext.cs" />
+    <Compile Include="Models\DAL\MovieContext.cs" />
+    <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Books\Create.cshtml" />
@@ -188,6 +188,18 @@
     <Content Include="Views\Home\helper.cshtml" />
     <Content Include="Views\Home\function.cshtml" />
     <Content Include="Views\Home\helper01.cshtml" />
+    <Content Include="Views\Movies\Create.cshtml" />
+    <Content Include="Views\Movies\Delete.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
+    <Content Include="Views\Movies\Edit.cshtml" />
+    <Content Include="Views\Movies\Index.cshtml" />
+    <Content Include="Views\Home\Index_03.cshtml" />
+    <Content Include="Views\Home\Index_04.cshtml" />
+    <Content Include="Views\Books\_IndexPartial.cshtml" />
+    <Content Include="Views\Books\_IndexPartial01.cshtml" />
+    <Content Include="Views\Home\link.cshtml" />
+    <Content Include="Views\Home\encode.cshtml" />
+    <Content Include="Views\Home\raw.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

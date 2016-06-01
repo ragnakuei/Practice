@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Practice.Models.Book>
+
+@section script{
+    <!--這是section script-->
+    Index_04 script<br />
+}
+
+<!--這是section body-->
+Index_04 body<br />
+@{
+    Layout = "~/Views/Shared/_Layout_01.cshtml";
+}
+<text style="color:blue">以下是@Html.Partial</text><br />
+@*@{ MvcHtmlString mhs = Html.Partial("~/Views/Books/_IndexPartial01.cshtml", new[]{"a","b","c" }); }*@
+@Html.Partial("~/Views/Books/_IndexPartial01.cshtml", new[]{"a","b","c" }, @ViewData)<br />
+--------------------------------------------------------------<br />
+<text style="color:blue">以下是@Html.RenderPartial</text><br />
+@{Html.RenderPartial("~/Views/Books/_IndexPartial01.cshtml", new[] { "a", "b", "c" });}<br />
+--------------------------------------------------------------<br />
+
+@section footer{
+    <!--這是section footer-->    
+    Index_04 footer<br />
+}

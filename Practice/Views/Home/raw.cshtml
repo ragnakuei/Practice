@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "raw";
+}
+
+@{ 
+    var htmlstring = "<script>alert('Raise alert');</script>";
+}
+@Html.Raw(htmlstring)
+
+@MvcHtmlString.Create(htmlstring)
