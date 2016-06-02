@@ -15,7 +15,7 @@ Index_04 body<br />
 @Html.Partial("~/Views/Books/_IndexPartial01.cshtml", new[]{"a","b","c" }, @ViewData)<br />
 --------------------------------------------------------------<br />
 <text style="color:blue">以下是@Html.RenderPartial</text><br />
-@{Html.RenderPartial("~/Views/Books/_IndexPartial01.cshtml", new[] { "a", "b", "c" });}<br />
+@{Html.RenderPartial("~/Views/Books/_IndexPartial01.cshtml", new[] { "a", "b", "c" }, @ViewData);}<br />
 --------------------------------------------------------------<br />
 
 @section footer{

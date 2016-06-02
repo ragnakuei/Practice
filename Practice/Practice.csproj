@@ -200,6 +200,7 @@
     <Content Include="Views\Home\link.cshtml" />
     <Content Include="Views\Home\encode.cshtml" />
     <Content Include="Views\Home\raw.cshtml" />
+    <Content Include="Views\Home\Index_05.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

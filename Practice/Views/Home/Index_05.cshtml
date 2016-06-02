@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "Index_05";
+}
+
+<h2>Index_05</h2>
+
+<p>using Html.BeginForm</p>
+@using (Html.BeginForm("Details","Books",new {id=2},FormMethod.Post,new {id="form1" }))
+{
+    <input type="submit" value="送出" />
+}
+<br />
+
+<p>using Html.RouteForm</p>
+@using (Html.BeginRouteForm("Movie",new { controller = "Movies", action = "Details", id = 1 }
+, FormMethod.Get, new { id = "form2" }))
+{
+    <input type="submit" value="送出" />
+}
+<br />
+
+<p>CheckBox</p>
+@Html.CheckBox("RemeberMe",true)
+@Html.CheckBox("RemeberMe", false)<br />
+<br />
+
+<p>Radio Button</p>
+@Html.RadioButton("Choice1", 1, new { id = "Choice_1" })
+@Html.RadioButton("Choice2", 2, new { id = "Choice_2" })
+@Html.RadioButton("Choice3", 3, new { id = "Choice_3" })
+<br />
+
+<p>DropDownList</p>
+@{ 
+        var books = ViewBag.books as Practice.Models.Book[];
+        //var selectItems = new SelectList(books,"id","name");
+
+        var selectItems = books.Select(
+                x => new SelectListItem
+                {
+                    Text = x.name,
+                    Value = x.id.ToString()
+                }
+        );
+
+}
+@Html.DropDownList("booklist", selectItems, "--請選擇--")
+<br />
+
+<p>ListBox</p>
+@Html.ListBox("booklist", selectItems , new { size = 5})
+

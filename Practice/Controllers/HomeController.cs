@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Practice.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -43,6 +44,17 @@ namespace Practice.Controllers
         {
             ViewBag.Title = "Index";
             ViewData["Title"] = "Index04";
+            return View();
+        }
+
+        public ActionResult Index_05()
+        {
+            ViewBag.books = new Book[] 
+            {
+                new Book { id=1,name="Book1" },
+                new Book { id=2,name="Book2" },
+                new Book { id=3,name="Book3" }
+            };
             return View();
         }
 
