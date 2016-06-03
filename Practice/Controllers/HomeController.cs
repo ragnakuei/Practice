@@ -49,13 +49,14 @@ namespace Practice.Controllers
 
         public ActionResult Index_05()
         {
-            ViewBag.books = new Book[] 
+             Book[] books = new Book[] 
             {
                 new Book { id=1,name="Book1" },
                 new Book { id=2,name="Book2" },
                 new Book { id=3,name="Book3" }
             };
-            return View();
+            ViewBag.books = books;
+            return View(books);
         }
 
         public ActionResult helper()

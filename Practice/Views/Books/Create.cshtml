@@ -35,9 +35,12 @@
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
+        @Html.ValidationSummary()
     </div>
 }
 
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
+
